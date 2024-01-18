@@ -3,5 +3,17 @@
 {% block title %}UrLite{% endblock %}
 
 {% block body %}
-    UrLite
+    <div class="form-container">
+        {{ form_start(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.originalUrl) }}
+            {{ form_widget(form.originalUrl, {'attr': {'class': 'form-control'}}) }}
+            <div class="error">{{ form_errors(form.originalUrl) }}</div>
+        </div>
+
+        <button type="submit" class="btn">Acortar URL</button>
+
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

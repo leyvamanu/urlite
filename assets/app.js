@@ -7,3 +7,16 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarNav = document.querySelector('#navbarNav');
+
+    navbarToggler.addEventListener('click', function() {
+        const isOpen = navbarNav.classList.contains('active');
+        navbarNav.classList.toggle('active');
+        navbarToggler.classList.toggle('close');
+        navbarToggler.setAttribute('aria-expanded', !isOpen); // Actualizar el atributo aria-expanded
+    });
+});

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="icon" href="{{ asset('favicon.ico') }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -13,6 +14,47 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <header class="header">
+        <nav class="navbar">
+            <a href="{{ path('app_main') }}" class="navbar-logo">
+                <img src="{{ asset('images/UrLite_logo.png') }}" alt="UrLite Logo">
+            </a>
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Características</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Precios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </header>
+
+    {% block body %}{% endblock %}
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="copyright">
+                    &copy; {{ "now"|date("Y") }} UrLite. Todos los derechos reservados.
+                    &copy; {{ "now"|date("Y") }} UrLite. Todos los derechos reservados.
+                </div>
+                <div class="policy-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Política de Cookies</a>
+                    <a href="#">Condiciones de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     </body>
 </html>
