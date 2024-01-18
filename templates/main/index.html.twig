@@ -4,15 +4,19 @@
 
 {% block body %}
     <div class="form-container">
+        <h1 class="form-title">Simplifica tus URLs</h1>
+
         {{ form_start(form) }}
 
         <div class="form-group">
             {{ form_label(form.originalUrl) }}
-            {{ form_widget(form.originalUrl, {'attr': {'class': 'form-control'}}) }}
+            <div class="{% if form_errors(form.originalUrl) %}has-error{% endif %}">
+                {{ form_widget(form.originalUrl, {'attr': {'class': 'utl-input'}}) }}
+            </div>
             <div class="error">{{ form_errors(form.originalUrl) }}</div>
         </div>
 
-        <button type="submit" class="btn">Acortar URL</button>
+        <button type="submit" class="btn">Simplificar</button>
 
         {{ form_end(form) }}
     </div>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 /* Estilo general del cuerpo */
 body {
@@ -36,6 +37,24 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+}
+
+.navbar-logo {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+}
+
+/* Estilo para el texto del nombre del sitio */
+.site-name {
+    font-family: 'Pacifico', cursive;
+    /* Otros estilos como tamaño y otros atributos de fuente */
+}
+
+/* Estilo para el enlace visitado */
+.navbar-logo:visited {
+    color: inherit; /* Mantén el mismo color para los enlaces visitados */
 }
 
 .navbar-logo img {
@@ -142,15 +161,20 @@ body {
     bottom: 0;
 }
 
-/* Contenedor principal del formulario */
-.form-container {
-    background-color: #ffffff;
-    padding: 40px; /* Mayor padding */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+/* Estilos para el footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    max-width: 500px; /* Ancho más grande */
-    margin: 10px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Estilos para el footer */
@@ -184,7 +208,7 @@ body {
 .policy-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    align-items: center; /* Alinea verticalmente los enlaces y el mensaje de copyright */
 }
 
 .policy-links a {
@@ -197,8 +221,29 @@ body {
     text-decoration: underline;
 }
 
+/* Contenedor principal del formulario */
+.form-container {
+    background-color: #ffffff;
+    padding: 40px; /* Mayor padding */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Ancho más grande */
+    margin: 10px;
+}
+
+.form-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
 /* Estilo de los campos del formulario */
-.form-control {
+.utl-input {
+    font-size: 20px;
     width: 100%;
     padding: 15px; /* Padding más grande */
     margin-bottom: 20px; /* Mayor separación */
@@ -218,15 +263,27 @@ body {
     font-size: 16px; /* Botón con texto más grande */
     cursor: pointer;
     transition: background-color 0.3s;
+    text-transform: uppercase;
 }
 
 .btn:hover {
     background-color: #3a6d8c; /* Cambio de color al pasar el mouse */
 }
 
+.has-error > input {
+    border: 1px solid #d9534f;
+}
+
 /* Mensajes de error */
 .error {
     color: #d9534f; /* Rojo para errores */
     font-size: 0.9em;
-    margin-bottom: 15px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.error > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }

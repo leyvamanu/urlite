@@ -18,6 +18,7 @@
         <nav class="navbar">
             <a href="{{ path('app_main') }}" class="navbar-logo">
                 <img src="{{ asset('images/UrLite_logo.png') }}" alt="UrLite Logo">
+                <div class="site-name">UrLite</div>
             </a>
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item">
@@ -40,18 +41,15 @@
     </header>
 
     {% block body %}{% endblock %}
-    
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
                 <div class="copyright">
                     &copy; {{ "now"|date("Y") }} UrLite. Todos los derechos reservados.
-                    &copy; {{ "now"|date("Y") }} UrLite. Todos los derechos reservados.
                 </div>
                 <div class="policy-links">
                     <a href="#">Política de Privacidad</a>
                     <a href="#">Política de Cookies</a>
-                    <a href="#">Condiciones de Uso</a>
                 </div>
             </div>
         </div>

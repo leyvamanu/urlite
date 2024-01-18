@@ -25,11 +25,11 @@ class ShortURLType extends AbstractType
                         'message' => 'Por favor, introduce una URL válida.',
                     ]),
                     new NotBlank([
-                        'message' => 'Este campo no puede estar vacío.',
+                        'message' => 'Tiene que introducir una URL.',
                     ]),
                     new Length([
                         'max' => 4000,
-                        'maxMessage' => 'La ShortURL no puede superar los 4000 caracteres.',
+                        'maxMessage' => 'La URL no puede superar los 4000 caracteres.',
                     ]),
                 ],
             ])

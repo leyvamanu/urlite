@@ -12,11 +12,24 @@ import './styles/app.css';
 document.addEventListener('DOMContentLoaded', function() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarNav = document.querySelector('#navbarNav');
-
-    navbarToggler.addEventListener('click', function() {
+    navbarToggler.addEventListener('click', () => {
         const isOpen = navbarNav.classList.contains('active');
         navbarNav.classList.toggle('active');
         navbarToggler.classList.toggle('close');
         navbarToggler.setAttribute('aria-expanded', !isOpen); // Actualizar el atributo aria-expanded
     });
+
+    const urlInput = document.getElementsByClassName('utl-input')[0];
+    if (urlInput) {
+        urlInput.addEventListener('input', () => {
+            const formGroup = document.querySelector('.has-error')[0];
+            if (formGroup) {
+                formGroup.classList.remove('has-error');
+            }
+            const errorDiv = document.querySelector('.error');
+            if (errorDiv) {
+                errorDiv.textContent = '';
+            }
+        });
+    }
 });
