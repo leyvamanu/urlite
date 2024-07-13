@@ -1,11 +1,5 @@
 #!/bin/bash
 
 echo "Deteniendo el entorno de desarrollo..."
-
-echo "Deteniendo los contenedores de Docker..."
-docker-compose down
-
-echo "Deteniendo el servidor de Symfony..."
+docker-compose stop
 symfony server:stop
-
-echo "Todos los servicios han sido detenidos."

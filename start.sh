@@ -1,15 +1,31 @@
 #!/bin/bash
 
-echo "Iniciando el entorno de desarrollo..."
+# Detectar el sistema operativo
+OS="$(uname -s)"
+case "${OS}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*|MINGW32*|MSYS*|MINGW*) machine=Windows;;
+    *)          machine="UNKNOWN:${OS}"
+esac
 
-echo "Arrancando los contenedores de Docker..."
-docker-compose up -d
+echo "Sistema operativo detectado: ${machine}"
 
-echo "Arrancando el servidor de Symfony..."
-symfony server:start -d
-
-echo "Abriendo el navegador..."
-symfony open:local
-
-echo "Arrancando Webpack Encore..."
-npm run dev-server
+# Comandos para Linux
+if [ "${machine}" = "Linux" ]; then
+    phpstorm . &
+    docker-compose up -d
+    symfony server:start -d
+    symfony open:local
+    npm run dev-server
+# Comandos para Windows
+elif [ "${machine}" = "Windows" ]; then
+    start PhpStorm.cmd .
+    docker-compose up -d
+    symfony server:start -d
+    symfony open:local
+    npm run dev-server
+else
+    echo "Sistema operativo no soportado"
+    exit 1
+fi

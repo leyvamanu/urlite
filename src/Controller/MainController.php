@@ -34,7 +34,7 @@ class MainController extends AbstractController
             $shortURL->generateShortCode();
             $this->entityManager->persist($shortURL);
             $this->entityManager->flush();
-            $this->addFlash('succes', '');
+            $this->addFlash('success', '');
         }
 
         return $this->render('main/index.html.twig', [
