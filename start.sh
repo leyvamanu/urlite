@@ -13,7 +13,7 @@ echo "Sistema operativo detectado: ${machine}"
 
 # Comandos para Linux
 if [ "${machine}" = "Linux" ]; then
-    phpstorm . &
+    nohup phpstorm . > /dev/null 2>&1 &
     docker-compose up -d
     symfony server:start -d
     symfony open:local
